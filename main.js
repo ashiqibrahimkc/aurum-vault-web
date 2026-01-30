@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 const navLinks = document.getElementById("navLinks");
 
-function openMenu(){
-    navLinks.style.transform = "translateX(0)";
+function showMenu(){
+    navLinks.style.right = "0";
 }
 
-function closeMenu(){
-    navLinks.style.transform = "translateX(100%)";
+function hideMenu(){
+    navLinks.style.right = "-260px";
 }
