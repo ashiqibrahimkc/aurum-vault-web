@@ -1,0 +1,621 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== HEADER / HERO ===== */
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image:
+        linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
+        url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 90px;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+}
+
+/* Brand */
+.navhead{
+    color: #b8860b;
+    font-size: 22px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Desktop Links */
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul{
+    list-style: none;
+}
+
+.nav-links ul li{
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #b8860b;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* Hover underline */
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #d4a373;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+/* ===== HERO TEXT ===== */
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1{
+    font-size: 62px;
+}
+
+.text-box p{
+    margin: 12px 0 40px;
+    font-size: 14px;
+}
+
+/* Button */
+.hero-btn{
+    padding: 12px 34px;
+    color: #fff;
+    border: 1px solid #fff;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.hero-btn:hover{
+    background: #b8860b;
+    border-color: #b8860b;
+}
+
+/* ===== MOBILE ICONS ===== */
+.menu-btn,
+.close-btn{
+    display: none;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===== MOBILE SIDEBAR ===== */
+@media(max-width:700px){
+
+    nav{
+        padding: 20px 30px;
+    }
+
+    .text-box h1{
+        font-size: 22px;
+    }
+
+    /* Show hamburger */
+    .menu-btn{
+        display: block;
+    }
+
+    /* Sidebar */
+    .nav-links{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 240px;
+        background: black;
+        text-align: left;
+        padding: 60px 25px;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        z-index: 2000;
+    }
+
+    .nav-links ul li{
+        display: block;
+        margin: 20px 0;
+    }
+
+    .nav-links ul li a{
+        color: #fff;
+        font-size: 14px;
+    }
+
+    /* Close icon */
+    .close-btn{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+/* ................featured............ */
+ .features{
+    width: 85%;
+    margin: auto;
+    background: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4% 20px;
+    border-radius: 12px;
+
+    /* Premium shadow */
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08),
+        0 25px 50px rgba(0,0,0,0.06);
+ }
+.feature-main{
+    padding: 3% 4%;
+}
+.feature-main{
+    background: linear-gradient(135deg, #fff, #faf6ee); /* soft luxury background */
+}
+
+.feature-box{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #333;
+}
+
+.feature-box i{
+    font-size: 24px;
+    color: #caa14d;
+}
+
+.feature-box:hover{
+    transform: translateY(-3px);
+    color: #caa14d;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .features{
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px;
+    }
+
+    .feature-box{
+        justify-content: center;
+    }
+}
+/* .................category.............. */
+.categories-split{
+    padding: 80px 6%;
+    background: #eff2fa;
+    text-align: center;
+}
+
+.section-title{
+    font-size: 32px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+/* Centered compact grid */
+.split-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Card */
+.split-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    cursor: pointer;
+    height: 280px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Image */
+.split-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+/* Hover zoom */
+.split-card:hover img{
+    transform: scale(1.08);
+}
+
+/* Slide-up text panel (your hover function) */
+.split-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: 0.6s ease;
+}
+
+.split-text h3{
+    font-size: 17px;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.split-text span{
+    font-size: 13px;
+    color: #caa14d;
+    letter-spacing: 1px;
+}
+
+.split-text::before{
+    content: '';
+    width: 45px;
+    height: 2px;
+    background: #caa14d;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Hover trigger */
+.split-card:hover .split-text{
+    transform: translateY(0);
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media(max-width:900px){
+    .split-grid{
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+    }
+}
+
+@media(max-width:600px){
+    .split-grid{
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+
+    .split-card{
+        height: 240px;
+    }
+}
+/* .......................products................... */
+/* ===============================
+   GLOBAL RESET
+================================ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===============================
+   FEATURED PRODUCT SLIDER
+================================ */
+
+.product-slider-section{
+    padding: 90px 6%;
+    background: radial-gradient(circle at top, #f9f9f9, #fff);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Title */
+.section-title{
+    color: #fff;
+    font-size: 34px;
+    margin-bottom: 70px;
+    letter-spacing: 1px;
+}
+
+/* ===============================
+   SLIDER CONTAINER
+================================ */
+
+.slider-container{
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    height: 420px;
+}
+
+/* ===============================
+   SLIDER TRACK
+================================ */
+
+.slider-track{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===============================
+   PRODUCT CARD
+================================ */
+
+.product-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 230px;
+    padding: 20px;
+    background: #1c1c1c;
+    border-radius: 18px;
+    text-align: center;
+    color: #fff;
+
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.35;
+    transition: 
+        transform 0.6s ease,
+        opacity 0.6s ease,
+        box-shadow 0.6s ease;
+
+    pointer-events: none;
+}
+
+/* Image */
+.product-card img{
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+/* Title */
+.product-card h3{
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+/* Subtitle */
+.product-card p{
+    font-size: 13px;
+    color: #caa14d;
+}
+
+/* ===============================
+   ACTIVE (CENTER) CARD
+================================ */
+
+.product-card.active{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.18);
+    background: #262626;
+    box-shadow:
+        0 0 25px rgba(202,161,77,0.5),
+        0 0 60px rgba(202,161,77,0.25);
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* ===============================
+   NAVIGATION BUTTONS
+================================ */
+
+.nav-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(145deg, #d6b15f, #b8913e);
+    color: #111;
+    font-size: 26px;
+    font-weight: bold;
+
+    z-index: 20;
+    box-shadow:
+        0 0 18px rgba(202,161,77,0.7),
+        inset 0 0 10px rgba(255,255,255,0.25);
+
+    transition: transform 0.25s ease;
+}
+
+.nav-btn:hover{
+    transform: translateY(-50%) scale(1.12);
+}
+
+.nav-btn.prev{
+    left: 0;
+}
+
+.nav-btn.next{
+    right: 0;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Tablet */
+@media(max-width: 1024px){
+    .slider-container{
+        height: 380px;
+    }
+
+    .product-card{
+        width: 210px;
+    }
+}
+
+/* Mobile */
+@media(max-width: 600px){
+    .slider-container{
+        height: 340px;
+    }
+
+    .product-card{
+        width: 190px;
+    }
+
+    .product-card img{
+        height: 150px;
+    }
+
+    .section-title{
+        font-size: 26px;
+    }
+
+    .nav-btn{
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+}
+/* ......................................................foooter............................................... */
+/* =========================
+   FOOTER – AURUM VAULT
+========================= */
+
+.footer{
+    background: linear-gradient(180deg, #a8a8aa, #a1b0fa);
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Top Section */
+.footer-top{
+    padding: 60px 8% 40px;
+}
+
+/* Menu */
+.footer-menu{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-menu li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.footer-menu li a:hover{
+    color: #d4af37; /* Gold */
+}
+
+/* Divider Line */
+.footer-line{
+    width: 80%;
+    margin: 0 auto 30px;
+    border: none;
+    height: 1px;
+    background: rgba(255,255,255,0.25);
+}
+
+/* Description */
+.footer-text{
+    max-width: 850px;
+    margin: 0 auto 35px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+}
+
+/* Social Icons */
+.footer-social{
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+.footer-social a{
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover{
+    color: #d4af37;
+    transform: translateY(-3px);
+}
+
+/* Bottom Bar */
+.footer-bottom{
+    background: black;
+    padding: 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-bottom span{
+    color: #d4af37;
+    font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+    .footer-menu{
+        gap: 20px;
+    }
+
+    .footer-text{
+        font-size: 13px;
+    }
+}
